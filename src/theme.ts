@@ -10,7 +10,9 @@ export default extendTheme({
     global: (props: any) => ({
       'html, body, #root': {
         color: mode(undefined, '#d9d9d9')(props),
-        height: '100%'
+        backgroundColor: mode(undefined, '#000')(props),
+        height: '100%',
+        position: 'relative'
       },
     }),
   },
@@ -43,6 +45,15 @@ export default extendTheme({
           fontWeight: 'bold',
           _hover: {
             backgroundColor: `${props.colorScheme}.600`
+          }
+        }),
+        outline: (props: any) => ({
+          borderColor: `${props.colorScheme}.500`,
+          color: mode(undefined, 'white')(props),
+          fontWeight: 'bold',
+          _hover: {
+            borderColor: `${props.colorScheme}.600`,
+            color: `${props.colorScheme}.600`
           }
         })
       }
